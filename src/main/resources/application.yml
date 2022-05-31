@@ -1,0 +1,48 @@
+spring:
+  datasource:
+    url: jdbc:mysql://tweetdb.col4qics3ars.us-east-1.rds.amazonaws.com/tweetdb
+    username: admin
+    password: ibm$1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/master_data_stage?useSSL=false&serverTimezone=UTC
+#    username: root
+#    password: As40083abc.1
+#  data:
+#      mongodb:
+#        uri: mongodb+srv://soumyaKadadi:bgm1998@cluster0.0elis.mongodb.net/test
+#        database: TweetApp
+  application:
+    name: TweetAppService
+#kafka:
+#    consumer:
+#      bootstrap-servers: localhost:9092
+#      group-id: tweetApp
+#      auto-offset-reset: earliest
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#    producer:
+#      bootstrap-servers: localhost:9092
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      batch-size: 100000
+      
+logging:
+  file:
+    path: './config/logs'
+    name: ${logging.file.path}/my-app.log
+  level:
+    org.springframework.web: ERROR
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        
+spring.jpa.hibernate.ddl-auto : update
+
+server:
+  port : 8090
+
+client:
+  url: http://localhost:4200
